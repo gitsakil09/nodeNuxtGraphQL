@@ -1,4 +1,4 @@
-## Basic CRUDing system using GraphQL and NodeJS (ApolloServer)
+## Basic CRUDing system using NuxtJS, GraphQL and NodeJS (ApolloServer)
 1. Front End: Vuetify, NuxtJS
 2. Backend: Apollo Server
 
