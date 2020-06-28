@@ -1,10 +1,18 @@
 <template>
   <client-only>
     <div>
-      <template v-if="!loading">
-        <pre>{{ Post }}</pre>
-      </template>
-      <template v-else>Loading...</template>
+      <v-card white>
+        <v-card-title primary-title>Post Detail</v-card-title>
+        <v-divider></v-divider>
+        <v-card-text>
+          <template v-if="!loading && post">
+            <v-card-title primary-title>{{ post.title }}</v-card-title>
+            <div>{{ post.description }}</div>
+          </template>
+          <template v-else>Loading...</template>
+        </v-card-text>
+      </v-card>
+      <!-- <pre>{{ post }}</pre> -->
     </div>
   </client-only>
 </template>
@@ -25,28 +33,13 @@ export default {
   apollo: {
     $loadingKey: 'loading',
     // Post
-    Post: {
+    post: {
       query: gql`
         query getPost($id: ID) {
-          Post(id: $id) {
+          post(id: $id) {
             id
-            text
             title
-            createdAt
-            updatedAt
-            comments {
-              id
-              text
-              updatedAt
-              createdAt
-              user {
-                id
-                name
-              }
-            }
-            _commentsMeta {
-              count
-            }
+            description
           }
         }
       `,

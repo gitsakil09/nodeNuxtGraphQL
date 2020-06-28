@@ -72,7 +72,8 @@ export default {
     clientConfigs: {
       default: {
         // httpEndpoint: 'https://rickandmortyapi.com/graphql/', // this is for testing
-        httpEndpoint: 'https://api.graph.cool/simple/v1/ciyz901en4j590185wkmexyex', // this is for testing
+        // httpEndpoint: 'https://api.graph.cool/simple/v1/ciyz901en4j590185wkmexyex', // this is for testing
+        httpEndpoint: 'http://localhost:4000/', // this is my endpoint
       },
     },
   },
